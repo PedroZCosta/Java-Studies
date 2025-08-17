@@ -1,10 +1,8 @@
 package dates;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class DateExercise {
 
@@ -72,6 +70,21 @@ public class DateExercise {
 
 
         // calculos com data
+        LocalDate pastWeekLocalDate = localDateWithoutTimezone.minusDays(7);
+        System.out.println("Data 7 dias atrás: " + pastWeekLocalDate);
+
+        LocalDate nextWeekLocalDate = localDateWithoutTimezone.plusDays(7);
+        System.out.println("Data 7 dias a frente: " + nextWeekLocalDate);
+
+        LocalDateTime pastminuteLocalDateTime = dateTimeWithTimezone.minusMinutes(32);
+        System.out.println("Data 32 minutos atrás: " + pastminuteLocalDateTime);
+
+        Instant pasthoursInstant = instant.minus(7, ChronoUnit.HOURS);
+        System.out.println("instante 7 horas atrás: " + pasthoursInstant);
+
+        Duration d1 = Duration.between(dateTimeOf,localDateFormattedWithHour);
+        System.out.println(d1.toDays());
+
 
 
 
